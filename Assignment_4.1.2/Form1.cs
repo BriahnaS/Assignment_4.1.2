@@ -7,7 +7,6 @@ namespace Assignment_4._1._2
             InitializeComponent();
         }
 
-
         // Basic Clear and Exit button controls
         private void ClearBtn_Click(object sender, EventArgs e)
         {
@@ -22,8 +21,8 @@ namespace Assignment_4._1._2
             this.Close();
         }
 
-        // Instance of the calculator class and declared variables
-        private ICalculator calculator = new Calculator();
+        // Instance of the MyMath class and declared variables
+        private ICalculator calculator = new MyMath();
         private double num1;
         private double num2;
 
@@ -72,7 +71,7 @@ namespace Assignment_4._1._2
     }
 
     // Create class that will inherit the interface
-    public class Calculator : ICalculator
+    public class MyMath : ICalculator
     {
         public double Add(double num1, double num2)
         {
@@ -98,6 +97,4 @@ namespace Assignment_4._1._2
             return (num1 / num2);
         }
     }
-
-
 }
