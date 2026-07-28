@@ -27,21 +27,19 @@ namespace Assignment_4._1._2
         private double num2;
 
         // Validating inputs
-        private void Num1_Leave(object sender, EventArgs e)
+        private void Num_Leave(object sender, EventArgs e)
         {
-            if (!double.TryParse(Num1.Text, out num1))
+            TextBox activeTextBox = sender as TextBox;
+            if (!double.TryParse(activeTextBox.Text, out double value))
             {
                 MessageBox.Show("Please enter a valid number.");
                 return;
             }
-        }
-        private void Num2_Leave(object sender, EventArgs e)
-        {
-            if (!double.TryParse(Num2.Text, out num2))
-            {
-                MessageBox.Show("Please enter a valid number.");
-                return;
-            }
+
+            if (activeTextBox.Name == "Num1")
+                num1 = value;
+            else if (activeTextBox.Name == "Num2")
+                num2 = value;
         }
 
 
@@ -65,8 +63,6 @@ namespace Assignment_4._1._2
         {
             ResultDisplay.Text = (calculator.Divide(num1, num2).ToString());
         }
-
-
     }
 
     // Create Interface
@@ -76,7 +72,6 @@ namespace Assignment_4._1._2
         double Subtract(double num1, double num2);
         double Multiply(double num1, double num2);
         double Divide(double num1, double num2);
-
     }
 
     // Create class that will inherit the interface
