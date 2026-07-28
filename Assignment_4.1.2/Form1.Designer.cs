@@ -49,6 +49,7 @@
             Num1.Name = "Num1";
             Num1.Size = new Size(200, 23);
             Num1.TabIndex = 0;
+            Num1.Leave += Num1_Leave;
             // 
             // Num2
             // 
@@ -56,6 +57,7 @@
             Num2.Name = "Num2";
             Num2.Size = new Size(200, 23);
             Num2.TabIndex = 1;
+            Num2.Leave += Num2_Leave;
             // 
             // AddBtn
             // 

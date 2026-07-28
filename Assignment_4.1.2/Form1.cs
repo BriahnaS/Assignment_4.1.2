@@ -26,38 +26,47 @@ namespace Assignment_4._1._2
         private double num1;
         private double num2;
 
+        // Validating inputs
+        private void Num1_Leave(object sender, EventArgs e)
+        {
+            if (!double.TryParse(Num1.Text, out num1))
+            {
+                MessageBox.Show("Please enter a valid number.");
+                return;
+            }
+        }
+        private void Num2_Leave(object sender, EventArgs e)
+        {
+            if (!double.TryParse(Num2.Text, out num2))
+            {
+                MessageBox.Show("Please enter a valid number.");
+                return;
+            }
+        }
+
+
         // Operator button instructions
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            double.TryParse(Num1.Text, out num1);
-            double.TryParse(Num2.Text, out num2);
-
             ResultDisplay.Text = (calculator.Add(num1, num2).ToString());
         }
 
         private void SubtractBtn_Click(object sender, EventArgs e)
         {
-            double.TryParse(Num1.Text, out num1);
-            double.TryParse(Num2.Text, out num2);
-
             ResultDisplay.Text = (calculator.Subtract(num1, num2).ToString());
         }
 
         private void TimesBtn_Click(object sender, EventArgs e)
         {
-            double.TryParse(Num1.Text, out num1);
-            double.TryParse(Num2.Text, out num2);
-
             ResultDisplay.Text = (calculator.Multiply(num1, num2).ToString());
         }
 
         private void DivideBtn_Click(object sender, EventArgs e)
         {
-            double.TryParse(Num1.Text, out num1);
-            double.TryParse(Num2.Text, out num2);
-
             ResultDisplay.Text = (calculator.Divide(num1, num2).ToString());
         }
+
+
     }
 
     // Create Interface
