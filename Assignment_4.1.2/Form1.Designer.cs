@@ -178,6 +178,7 @@
             ResultDisplay.Font = new Font("Segoe UI", 9F);
             ResultDisplay.Location = new Point(175, 336);
             ResultDisplay.Name = "ResultDisplay";
+            ResultDisplay.ReadOnly = true;
             ResultDisplay.Size = new Size(170, 23);
             ResultDisplay.TabIndex = 9;
             // 
